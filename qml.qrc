@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>Button.qml</file>
+        <file>Welcome.qml</file>
+        <file>Overview.qml</file>
+        <file>battery-status-full.jpg</file>
+        <file>HouseConsumption.qml</file>
+        <file>GridConsumption.qml</file>
+        <file>HouseProduction.qml</file>
+    </qresource>
+</RCC>
