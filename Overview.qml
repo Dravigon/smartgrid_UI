@@ -67,4 +67,16 @@ Rectangle {
         text: "back"
         onClicked: backclicked()
     }
+    Timer {
+        id: refreshTimer
+        interval: 1 / 1 * 1000 // 60 Hz
+        running: true
+        repeat: true
+        onTriggered: {
+            energy.text=qsTr("Energy :"+myserver.queryLatest("energy"));
+            power.text=qsTr("Power :"+myserver.queryLatest("power"));
+            voltage.text=qsTr("Voltage :"+myserver.queryLatest("voltage"));
+            current.text=qsTr("Current :"+myserver.queryLatest("current"));
+        }
+        }
 }

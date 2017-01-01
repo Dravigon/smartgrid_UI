@@ -9,5 +9,6 @@
         <file>HouseConsumption.qml</file>
         <file>GridConsumption.qml</file>
         <file>HouseProduction.qml</file>
+        <file>Revenue.qml</file>
     </qresource>
 </RCC>

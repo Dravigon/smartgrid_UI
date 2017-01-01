@@ -48,14 +48,46 @@ ApplicationWindow{
             x:150
             width:parent.width/4
             text: qsTr("Login")
-            onClicked: root.visible=!(welcome.visible=myserver.authenticate(password.text))
+            onClicked: {root.visible=!(welcome.visible=myserver.authenticate(password.text))
+
+            }
         }
     }
 
 
     Welcome{
-    id:welcome
-    visible: false
+        id:welcome
+        visible: false
+    }
+
+    TextField {
+        id: hostname
+        x: 288
+        y: 80
+        width: 208
+        height: 43
+        text: qsTr("localhost")
+        onTextChanged:myserver.setDatabase(text,database.text,port.text);
+    }
+
+    TextField {
+        id: database
+        x: 510
+        y: 80
+        width: 187
+        height: 43
+        text: qsTr("smartgrid")
+        onTextChanged:myserver.setDatabase(hostname.text,text,port.text);
+    }
+
+    TextField {
+        id: port
+        x: 716
+        y: 80
+        width: 128
+        height: 43
+        text: qsTr("3306")
+        onTextChanged:myserver.setDatabase(hostname.text,database.text,text);
     }
 }
 

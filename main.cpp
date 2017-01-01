@@ -8,9 +8,10 @@ int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QApplication app(argc, argv);
-    Server myserver;
+
+    QScopedPointer<Server> myserver(new Server);
     QQmlApplicationEngine engine;
-        engine.rootContext()->setContextProperty("myserver",&myserver);
+    engine.rootContext()->setContextProperty("myserver",myserver.data());
     engine.load(QUrl(QLatin1String("qrc:/main.qml")));
 
 

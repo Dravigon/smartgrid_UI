@@ -1,4 +1,4 @@
-QT += qml quick charts
+QT += qml quick charts sql
 
 CONFIG += c++11
 
